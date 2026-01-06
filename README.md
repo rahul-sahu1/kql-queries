@@ -48,6 +48,7 @@ Advanced threat detection and vulnerability management queries for proactive sec
 | **Shared_Device_Identification_V2.kql** | Enhanced version with direct summarization from DeviceLogonEvents | Improved performance for large environments |
 | **Critical_Software_Vulnerabilities_V1.kql** | Lists devices with critical CVEs and counts vulnerabilities per device | Prioritize patch management, vulnerability remediation |
 | **Critical_Software_Vulnerabilities_V2.kql** | Enhanced vulnerability tracking with additional filtering | Advanced vulnerability management workflows |
+| **Suspicious_PowerShell_Execution.kql** | Detects potentially malicious PowerShell commands using encoded commands, web downloads, or obfuscation | Identify fileless malware, script-based attacks, and malicious automation |
 
 ### Audit
 
@@ -65,6 +66,7 @@ Authentication and identity security queries for detecting account compromise an
 | Query | Description | Use Case |
 |-------|-------------|----------|
 | **Failed_Signins_By_User.kql** | Identifies users with multiple failed sign-in attempts in 24 hours | Detect brute-force attacks, credential stuffing, user authentication issues |
+| **Account_Lockout_Monitoring.kql** | Tracks user account lockouts over 24 hours to identify attack patterns or support issues | Detect brute-force attacks, credential stuffing, identify users requiring support |
 
 ### Performance
 
